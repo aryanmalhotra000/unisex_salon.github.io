@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Salon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image:about.jpg ; /* Replace 'your_background_image.jpg' with your image file */
+      background-size: cover;
+      background-position: center;
+      color: #333; /* Text color */
+    }
+    header {
+      background-color: #f7f7f7;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+    }
+    nav a:hover {
+      text-decoration: none;
+      color: white;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+    section {
+      padding: 50px;
+    }
+    .salon-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .salon-image {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+      display: block;
+      margin: 0 auto;
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .service {
+      text-align: center;
+      margin: 20px;
+      padding: 20px;
+      width: 300px;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Our UNISEX Salon</h1>
+    <p>We create a relaxing environment and provide top-notch services!</p>
+  </header>
+
+  <nav>
+<a href=home.html>HOME</a>
+    <a href="#about">ABOUT WORK</a>
+    <a href="#services">SERVICES</a>
+    <a href="#contact">CONTACT US</a>
+    <div class="top-navigation">
+    <a href=app.html>BOOK APPOINTMENT</a>
+    <a href="images.html" class="images-button">IMAGES</a>
+    <a href="login.html" class="login-button">LOGIN</a>
+    <a href=signup.html class="signup-button">SIGN UP</a>
+  </div>
+
+  </nav>
+
+  <section id="about">
+    <div class="salon-info">
+      <h2>About Our Salon</h2>
+      <p>We pride ourselves on providing a professional and friendly atmosphere where our clients can relax and enjoy high-quality services.Welcome to our premium Unisex Salon experience where sophistication meets excellence. At Unisex Salon, we take pride in curating an environment that blends luxury with expertise. Our team of seasoned professionals doesn't just style hair; they craft masterpieces. Each stylist possesses an eye for detail and a passion for staying abreast of the latest trends and techniques in the industry. We believe in personalized care, ensuring every client feels valued and leaves with a renewed sense of confidence. From precision cuts to vibrant colors and rejuvenating spa services, we redefine beauty with a touch of finesse.
+
+Step into our sanctuary of beauty and relaxation, where ambiance and professionalism intertwine seamlessly. With a commitment to exceeding expectations, our salon transcends the ordinary, offering a haven of tranquility amidst the bustling city. Our dedication to excellence extends beyond services; it's reflected in every interaction, every treatment, and every smile. We understand that self-care is not just a luxury but a necessity, and that's why we go above and beyond to provide an unparalleled experience. Come, indulge yourself, and discover the epitome of elegance and skill at Unisex Salon.</p>
+    </div>
+    <img class="salon-image" src="salon_image.jpg" alt="Salon Interior">
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Hair Styling</h3>
+        <p>Our skilled stylists offer trendy and classic haircuts, coloring, and styling services.</p>
+      </div>
+      <div class="service">
+        <h3>Manicure & Pedicure</h3>
+        <p>Pamper yourself with our manicure and pedicure services for healthy and beautiful nails.</p>
+      </div>
+      <div class="service">
+        <h3>Spa Treatments</h3>
+        <p>Relax and rejuvenate with our range of spa treatments, including massages and facials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>For appointments or inquiries, please call us at: <strong>+91 9079691161</strong></p>
+    <p>Visit us at: 376 subhash nagar pal road jodhpur</p>
+    <p>Email: aryanm2807@unisex.com</p>
+  </section>
+
+</body>
+</html>

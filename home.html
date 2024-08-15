@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unisex Salon</title>
+  <style>
+    /* Add basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      position: relative;
+      height: 100vh;
+      margin: 0;
+      background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your image file */
+      background-size: cover;
+      background-position: center;
+    }
+    .heading {
+      position: absolute;
+      top: 20px; /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-style: italic;
+      font-size: 24px;
+    }
+    .top-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+    .top-navigation a {
+      text-decoration: none;
+      color: #fff;
+      margin-right: 20px;
+      position: relative;
+    }
+    .top-navigation a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+    .top-navigation a:hover::after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+    .login-button,
+    .signup-button,
+    .images-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .images-button {
+      background-color: transparent; /* Remove background color */
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>Unisex Salon</h1>
+  </div>
+
+  <div class="top-navigation">
+    <a href=1.html>HOME</a>
+    <a href=about.html>ABOUT US</a>
+    <a href=app.html>BOOK APPOINTMENT</a>
+    <a href= contact.html> CONTACT US </a>
+    <a href="images.html" class="images-button">IMAGES</a>
+    <a href="login.html" class="login-button">LOGIN</a>
+    <a href=signup.html class="signup-button">SIGN UP</a>
+  </div>
+  
+  <!-- Your content here -->
+  
+</body>
+</html>

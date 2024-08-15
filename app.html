@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment</title>
+  <style>
+    /* Basic Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: white;
+    }
+    .top-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: black; /* Yellow background color for navigation */
+      color: black;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+    }
+    .top-navigation a {
+      text-decoration: none;
+      color: white;
+      margin-right: 20px;
+      padding: 10px 15px; /* Adjust padding as needed */
+      position: relative;
+      transition: color 0.3s ease-in-out;
+      border-radius: 5px; /* Optional: Add rounded corners */
+    }
+    .top-navigation a:hover {
+      color: white;
+    }
+    .top-navigation a:hover,
+    .top-navigation a:focus { /* Yellow background on hover and focus */
+      background-color: none;
+    }
+    .top-navigation a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: blue;
+      visibility: hidden;
+      transition: width 0.3s ease-in-out;
+    }
+    .top-navigation a:hover::after {
+      visibility: visible;
+      width: 100%;
+    }
+    /* Rest of your styles */
+    .booking-panel {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 40%;
+      max-width: 600px;
+      text-align: center;
+      margin-top: 180px; /* Adjust margin top to create space below the fixed navigation */
+      margin-bottom: 40px;    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    input[type="submit"] {
+      margin-bottom: 15px;
+      width: calc(100% - 20px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body  style="background-image: url('background-image2.jpg'); background-size: cover; background-position: center;">
+  <div class="top-navigation">
+    <a href="home.html">HOME</a>
+    <a href="about.html">ABOUT US</a>
+    <a href="contact.html">CONTACT US</a>
+    <a href="app.html">BOOK APPOINTMENT</a>
+    <a href="images.html">IMAGES</a>
+    <a href="login.php" class="login-button">LOGIN</a>
+    <a href="signup.php" class="signup-button">SIGN UP</a>
+  </div>
+  <div class="booking-panel">
+    <h2>Book an Appointment</h2>
+    <form action="/book_appointment" method="post">
+      <input type="text" placeholder="Your Name" name="customer_name">
+      <input type="email" placeholder="Email Address" name="email">
+      <input type="tel" placeholder="Phone Number" name="phone_number">
+      <input type="date" name="appointment_date">
+      <select name="service">
+        <option value="" disabled selected>Select Service</option>
+        <option value="haircut">Haircut</option>
+        <option value="manicure">Manicure</option>
+        <option value="pedicure">Pedicure</option>
+        <!-- Add more service options as needed -->
+      </select>
+      <input type="submit" value="Book Appointment">
+    </form>
+  </div>
+<?php
+// Database connection
+$servername = "localhost"; // Change this if your database is on a different server
+$username = "root"; // Change this to your MySQL username
+$password = ""; // Change this to your MySQL password
+$dbname = ""; // Change this to your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// If form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Collect form data
+  $customer_name = $_POST['customer_name'];
+  $email = $_POST['email'];
+  $phone_number = $_POST['phone_number'];
+  $appointment_date = $_POST['appointment_date'];
+  $service = $_POST['service'];
+
+  // SQL query to insert data into a table
+  $sql = "INSERT INTO appointments (customer_name, email, phone_number, appointment_date, service) VALUES ('$customer_name', '$email', '$phone_number', '$appointment_date', '$service')";
+
+  if ($conn->query($sql) === TRUE) {
+    echo "Appointment booked successfully!";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+// Close connection
+$conn->close();
+?>
+</body>
+</html>
